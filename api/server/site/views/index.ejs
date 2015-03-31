@@ -1,0 +1,44 @@
+<% layout('__layout') -%>
+
+<div class='container' style="background-color: #fff;">
+  <div class="row">
+    <div id="carousel-container" class="col-md-12" style="padding: 0">
+      
+    </div>
+  </div>
+</div>
+
+<script id="tmplCarousel" type="text/template">
+  <div class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {{#each images}}
+          <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" class="{{#if @first}} active{{/if}}"></li>
+        {{/each}}
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        {{#each images}}
+        <div class="item {{#if @first}} active{{/if}}">
+          <img src="{{url}}" alt="{{title}}">
+          <div class="carousel-caption" style="font-size: 25px">
+            {{title}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+  </div>
+</script>
+
+<script type='text/javascript' src='/javascripts/app.js'></script>
