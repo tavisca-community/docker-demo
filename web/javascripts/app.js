@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var $container = $('#carousel-container'),
 		template = Handlebars.compile($('#tmplCarousel').html());
 
-	$.getJSON('http://localhost:8400/service/images', function(images){
+	$.getJSON('http://dockerdemo.aws.appacitive.com:8400/service/images', function(images){
 		$container.html(template({ 
 			images: images
 		}));
