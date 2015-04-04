@@ -7,7 +7,7 @@ exports.getAll = function (req, res) {
 
     var MongoClient = require('mongodb').MongoClient;
 
-    var mongodbUrl = 'mongodb://hfladmin:1qaz1qaz@192.168.0.59:27017/hfl';
+    var mongodbUrl = 'mongodb://dockerdemo.aws.appacitive.com:27017/test';
 
     MongoClient.connect(mongodbUrl, function(err, db){
         var collection = db.collection('images')
